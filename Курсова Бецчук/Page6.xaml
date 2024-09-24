@@ -1,0 +1,161 @@
+﻿<Page x:Class="Курсова_Бейчук.Page6"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Курсова_Бейчук"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page6">
+
+    <Grid Background="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.ColumnSpan="9">
+            <DockPanel>
+                <Menu DockPanel.Dock="Top" VerticalAlignment="Top" FontSize="16">
+                    <MenuItem Header="_Файл">
+                        <MenuItem.Icon>
+                            <Image Source="pack://application:,,,/Img/file-icon.png" Visibility="Visible"/>
+                        </MenuItem.Icon>
+
+                        <MenuItem Header="_Додати фірму" Click="MenuItem11_Click">
+                            <MenuItem.Icon>
+                                <Image Source="pack://application:,,,/Img/add-icon.png" Visibility="Visible"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="_Видалити фірму" Click="MenuItem12_Click">
+                            <MenuItem.Icon>
+                                <Image Source="pack://application:,,,/Img/remove-icon.png" Visibility="Visible"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="_Переглянути записи" Click="MenuItem13_Click">
+                            <MenuItem.Icon>
+                                <Image Source="pack://application:,,,/Img/view-all-icon.png" Visibility="Visible"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="_Редагувати запис" Click="MenuItem14_Click">
+                            <MenuItem.Icon>
+                                <Image Source="pack://application:,,,/Img/edit-icon.png" Visibility="Visible"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="_Інструменти">
+                        <MenuItem.Icon>
+                            <Image Source="pack://application:,,,/Img/tools-icon.png" Visibility="Visible"/>
+                        </MenuItem.Icon>
+
+                        <MenuItem Header="_Знайти фірму з найбільшим річним прибутком" Click="MenuItem21_Click">
+                            <MenuItem.Icon>
+                                <Image Source="pack://application:,,,/Img/analyze-icon.png" Visibility="Visible"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="_Знайти фірму з найменшим річним прибутком" Click="MenuItem23_Click">
+                            <MenuItem.Icon>
+                                <Image Source="pack://application:,,,/Img/analyze-icon.png" Visibility="Visible"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="_Пошук за назвою фірми" Click="MenuItem22_Click">
+                            <MenuItem.Icon>
+                                <Image Source="pack://application:,,,/Img/search-icon.png" Visibility="Visible"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="_Знайти фірму з найбільшим числом замовлень за рік" Click="MenuItem24_Click">
+                            <MenuItem.Icon>
+                                <Image Source="pack://application:,,,/Img/analyze-icon.png" Visibility="Visible"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="_Знайти фірму з найбільшим річним випуском лайнерів" Click="MenuItem25_Click">
+                            <MenuItem.Icon>
+                                <Image Source="pack://application:,,,/Img/analyze-icon.png" Visibility="Visible"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="_Показати додаткові значення" Click="MenuItem26_Click">
+                            <MenuItem.Icon>
+                                <Image Source="pack://application:,,,/Img/view-details-icon.png" Visibility="Visible"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="_Довідка" Click="MenuItem3_Click">
+                        <MenuItem.Icon>
+                            <Image Source="pack://application:,,,/Img/help-icon.png" Visibility="Visible"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="_Вихід" Click="Exit_Click">
+                        <MenuItem.Icon>
+                            <Image Source="pack://application:,,,/Img/exit-icon.png" Visibility="Visible"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                </Menu>
+
+            </DockPanel>
+
+        </Grid>
+
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Редагувати запис" VerticalAlignment="Center" TextAlignment="Center" FontSize="20" FontWeight="Bold" Foreground="#FF1480F7" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <TextBlock TextWrapping="Wrap" Text="Введіть назву фірми:" FontSize="16" TextAlignment="Right" FontWeight="Bold" Grid.Row="4" Grid.Column="1" Height="23" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox x:Name="Company_search_box" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18" AcceptsReturn="False" KeyDown="OnKeyDownHandler" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <Button x:Name="SearchByNameBtn" FontSize="18" FontWeight="Bold" Click="SearchByNameBtn_Click" Foreground="#FF1480F7" Grid.Row="4" Grid.Column="7">
+            <DockPanel HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Image Source="pack://application:,,,/Img/search2-icon.png" Width="24" Height="28" Margin="0,0,8,0"/>
+                <TextBlock>Пошук</TextBlock>
+            </DockPanel>
+        </Button>
+        <Label x:Name="Error_lbl" Content="" VerticalAlignment="Center" FontSize="18" Foreground="Red" FontStyle="Italic" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <TextBlock x:Name="Name_lbl1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Назва:" VerticalAlignment="Center" TextAlignment="Right" FontSize="16" Grid.Row="7" Grid.Column="3" Width="180"/>
+        <TextBlock x:Name="Yearly_prod_lbl1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Річний випуск лайнерів:" VerticalAlignment="Center" TextAlignment="Right" FontSize="16" Grid.Row="9" Grid.Column="3" Width="180"/>
+        <TextBlock x:Name="Yearly_orders_lbl1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Число замовлень за рік:" VerticalAlignment="Center" TextAlignment="Right" FontSize="16" Grid.Row="11" Grid.Column="3" Width="180"/>
+        <TextBlock x:Name="Yearly_profit_lbl1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Річний прибуток ($):" VerticalAlignment="Center" TextAlignment="Right" FontSize="16" Grid.Row="13" Grid.Column="3" Width="180"/>
+        <TextBox x:Name="Name_box" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" Grid.Row="7" Grid.Column="5"/>
+        <TextBox x:Name="Prod_box" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" Grid.Row="9" Grid.Column="5"/>
+        <TextBox x:Name="Ord_box" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" Grid.Row="11" Grid.Column="5"/>
+        <TextBox x:Name="Prof_box" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16" Grid.Row="13" Grid.Column="5"/>
+        <Label x:Name="Yearly_prof_error_lbl" Content="" HorizontalAlignment="Left" VerticalAlignment="Center" FontStyle="Italic" HorizontalContentAlignment="Left" Grid.Row="13" Grid.Column="6" Grid.ColumnSpan="2" Margin="20,0,0,0" Foreground="Red"/>
+        <Label x:Name="Yearly_ord_error_lbl" Content="" HorizontalAlignment="Left" VerticalAlignment="Center" FontStyle="Italic" HorizontalContentAlignment="Left" Grid.Row="11" Grid.Column="6" Grid.ColumnSpan="2" Margin="20,0,0,0" Foreground="Red"/>
+        <Label x:Name="Yearly_prod_error_lbl" Content="" HorizontalAlignment="Left" VerticalAlignment="Center" FontStyle="Italic" HorizontalContentAlignment="Left" Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="2" Margin="20,0,0,0" Foreground="Red"/>
+        <Label x:Name="Name_error_lbl" Content="" HorizontalAlignment="Left" VerticalAlignment="Center" FontStyle="Italic" HorizontalContentAlignment="Left" Grid.Row="7" Grid.Column="6" Grid.ColumnSpan="2" Margin="20,0,0,0" Foreground="Red"/>
+        <Button x:Name="Edit_btn" FontWeight="Bold" Click="Edit_btn_Click" FontSize="16" Grid.Row="15" Grid.Column="3" Grid.ColumnSpan="3" HorizontalAlignment="Center" Width="150">
+            <DockPanel HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Image Source="pack://application:,,,/Img/edit-icon.png" Width="20" Height="20" Margin="0,0,9.3,0"/>
+                <TextBlock>Редагувати</TextBlock>
+            </DockPanel>
+        </Button>
+        <TextBlock x:Name="Done_txtblock" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Готово" VerticalAlignment="Center" Foreground="#FF00C40E" FontWeight="Bold" Grid.Row="17" Grid.Column="3" Grid.ColumnSpan="3" FontSize="15"/>
+
+
+    </Grid>
+</Page>
